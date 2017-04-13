@@ -5,5 +5,13 @@
     <section>
         <h1>Blog posts</h1>
         <!-- robe -->
+        {% for post in posts %}
+        <article>
+            <h1>{{ post.title }}</h1>
+            <p>
+                {{ post.content }}
+            </p>
+        </article>
+        {% endfor %}
     </section>
 {% endblock %}
