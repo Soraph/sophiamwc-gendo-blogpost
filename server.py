@@ -27,7 +27,7 @@ def homepage():
             db.commit()
 
         return '', 201
-    else:
+    elif request.method == 'GET':
         sql_all_posts = '''
             SELECT
                 id, title, content, date
