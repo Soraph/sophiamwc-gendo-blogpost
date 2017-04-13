@@ -7,7 +7,6 @@ def main():
             'title': 'Post from client',
             'content': 'Lorem ipsum'
         })
-    print(r.text)
 
 
 if __name__ == '__main__':
