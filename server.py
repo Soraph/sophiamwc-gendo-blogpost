@@ -11,7 +11,22 @@ c = db.cursor()
 @app.route('/', endpoint='homepage', methods=['GET', 'POST'])
 def homepage():
     if request.method == 'POST':
-        pass
+        title = request.form['title']
+        content = request.form['content']
+
+        sql_insert = '''
+            INSERT INTO posts(title, content)
+            VALUES(?, ?)
+        '''
+        try:
+            c.execute(sql_insert, [title, content])
+        except sqlite3.Error:
+            db.rollback()
+            raise
+        else:
+            db.commit()
+
+        return '', 201
     else:
         sql_all_posts = '''
             SELECT
