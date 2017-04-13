@@ -30,7 +30,7 @@ def homepage():
     else:
         sql_all_posts = '''
             SELECT
-                id, title, content
+                id, title, content, date
             FROM
                 posts
             ORDER BY
