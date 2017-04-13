@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+        <title>{{ page_title }} - The blog</title>
+        <link href='{{ url_for('static', filename='reset.css') }}' rel='stylesheet' />
+        <link href='{{ url_for('static', filename='style.css') }}' rel='stylesheet' />
+        {% endblock %}
+    </head>
+    <body>
+        <main>
+            {% block main %}
+            {% endblock %}
+        </main>
+    </body>
+</html>
